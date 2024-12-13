@@ -6,7 +6,7 @@ export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async (values, thunkAPI) => {
     try {
-      const response = await fetch("http://localhost:8000/api/v1/auth/signin", {
+      const response = await fetch("https://steck.onrender.comapi/v1/auth/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const loginAdmin = createAsyncThunk(
   "auth/loginAdmin",
   async (values, thunkAPI) => {
     try {
-      const response = await fetch("http://localhost:8000/api/v1/auth/adminsignin", {
+      const response = await fetch("https://steck.onrender.comapi/v1/auth/adminsignin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export const signupUser = createAsyncThunk(
   "auth/signupUser",
   async (values, thunkAPI) => {
     try {
-      const response = await fetch("http://localhost:8000/api/v1/auth/register", {
+      const response = await fetch("https://steck.onrender.comapi/v1/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export const signoutuser = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       localStorage.removeItem("auth");
-      const response = await fetch("http://localhost:8000/api/v1/auth/signout");
+      const response = await fetch("https://steck.onrender.comapi/v1/auth/signout");
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message);
@@ -95,7 +95,7 @@ export const signoutuser = createAsyncThunk(
 //     try {
 //       // Your asynchronous logic to authenticate user here
 //       console.log(values)
-//       const response = await fetch("http://localhost:8000/api/v1/auth/changepassword", {
+//       const response = await fetch("https://steck.onrender.comapi/v1/auth/changepassword", {
 //         method: "POST",
 //         headers: {
 //           "Content-Type": "application/json",

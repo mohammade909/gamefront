@@ -5,7 +5,7 @@ export const getstrategy = createAsyncThunk(
   "staff/getstrategy",
   async (_, thunkAPI) => {
     try {
-      const response = await fetch("http://localhost:8000/api/v1/game/getstrategy");
+      const response = await fetch("https://steck.onrender.comapi/v1/game/getstrategy");
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -24,7 +24,7 @@ export const LeaderBoard = createAsyncThunk(
   "staff/LeaderBoard",
   async (_, thunkAPI) => {
     try {
-      const response = await fetch("http://localhost:8000/api/v1/game/getLeaderBoard");
+      const response = await fetch("https://steck.onrender.comapi/v1/game/getLeaderBoard");
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -46,7 +46,7 @@ export const updateresult = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       // Your asynchronous logic to update student here
-      const response = await fetch(`http://localhost:8000/api/v1/game/updateresult`, {
+      const response = await fetch(`https://steck.onrender.comapi/v1/game/updateresult`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +73,7 @@ export const strategySave = createAsyncThunk(
   async (newStrategy, thunkAPI) => {
     try {
       // Your asynchronous logic to update student here
-      const response = await fetch(`http://localhost:8000/api/v1/game/addstrategy`, {
+      const response = await fetch(`https://steck.onrender.comapi/v1/game/addstrategy`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

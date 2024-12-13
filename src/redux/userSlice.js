@@ -5,7 +5,7 @@ export const getAllUsers = createAsyncThunk(
   "staff/getAllUsers",
   async (_, thunkAPI) => {
     try {
-      const response = await fetch("http://localhost:8000/api/v1/users/list");
+      const response = await fetch("https://steck.onrender.comapi/v1/users/list");
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -25,7 +25,7 @@ export const getUser = createAsyncThunk(
   "staff/getUser",
   async (id, thunkAPI) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/users/${id}`);
+      const response = await fetch(`https://steck.onrender.comapi/v1/users/${id}`);
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -45,7 +45,7 @@ export const getUserbyemail = createAsyncThunk(
   async (userby, thunkAPI) => {
     try {
       console.log(userby)
-      const response = await fetch(`http://localhost:8000/api/v1/users/byemail` ,{
+      const response = await fetch(`https://steck.onrender.comapi/v1/users/byemail` ,{
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export const deleteUsers = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       // Your asynchronous logic to delete student here
-      const response = await fetch(`http://localhost:8000/api/v1/users/${id}`, {
+      const response = await fetch(`https://steck.onrender.comapi/v1/users/${id}`, {
         method: "DELETE",
       });
 
@@ -92,7 +92,7 @@ export const updateUsers = createAsyncThunk(
   async ({ id, updatedData }, thunkAPI) => {
     try {
       // Your asynchronous logic to update student here
-      const response = await fetch(`http://localhost:8000/api/v1/users/${id}`, {
+      const response = await fetch(`https://steck.onrender.comapi/v1/users/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -119,7 +119,7 @@ export const addAmount = createAsyncThunk(
   async ({amount,action}, thunkAPI) => {
     try {
       // Your asynchronous logic to update student here
-      const response = await fetch(`http://localhost:8000/api/v1/users/addamount`, {
+      const response = await fetch(`https://steck.onrender.comapi/v1/users/addamount`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -5,7 +5,7 @@ export const getTheme = createAsyncThunk(
   async (user_id, thunkAPI) => {
     try {
         console.log(user_id)
-      const response = await fetch(`http://localhost:8000/api/v1/theme/${user_id}`);
+      const response = await fetch(`https://steck.onrender.comapi/v1/theme/${user_id}`);
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -22,7 +22,7 @@ export const updateTheme = createAsyncThunk(
   "staff/updateTheme",
   async ({name,color,user_id}, thunkAPI) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/theme/update`, {
+      const response = await fetch(`https://steck.onrender.comapi/v1/theme/update`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
